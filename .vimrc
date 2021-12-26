@@ -1,6 +1,6 @@
 " set encoding
 set encoding=utf-8
-set fileencodings=utf-8,gb18030,dbk
+set fileencodings=utf-8,gb18030,gbk
 set fileencoding=utf-8
 
 " "vundle 环境设置
