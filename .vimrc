@@ -1,14 +1,19 @@
-"vundle 环境设置
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'Valloric/YouCompleteMe’
-" 插件列表结束
-call vundle#end()
-filetype plugin indent on
+" set encoding
+set encoding=utf-8
+set fileencodings=utf-8,gb18030,dbk
+set fileencoding=utf-8
+
+" "vundle 环境设置
+" filetype off
+" set rtp+=~/.vim/bundle/Vundle.vim
+" " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'altercation/vim-colors-solarized'
+" " Plugin 'Valloric/YouCompleteMe’
+" " 插件列表结束
+" call vundle#end()
+" filetype plugin indent on
   
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
@@ -38,7 +43,7 @@ nmap <Leader>WQ :wa<CR>:q<CR>
 " 不做任何保存，直接退出 vim
 nmap <Leader>Q :qa!<CR>
 " 依次遍历子窗口
-" nnoremap nw <C-W><C-W>
+nnoremap nw <C-W><C-W>
 " 跳转至右方的窗口
 nnoremap <Leader>lw <C-W>l
 " 跳转至左方的窗口
@@ -47,8 +52,6 @@ nnoremap <Leader>hw <C-W>h
 nnoremap <Leader>kw <C-W>k
 " 跳转至下方的子窗口
 nnoremap <Leader>jw <C-W>j
-" 定义快捷键在结对符之间跳转
-nmap <Leader>M %
  
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -117,7 +120,7 @@ inoremap [ []<ESC>i
 " inoremap } <c-r>=ClosePair('}')<CR>
  
 " 为python文件自动添加文件头
-autocmd BufNewFile *.py execute ":call NewPy("
+autocmd BufNewFile *.py execute ":call NewPy()"
 function! NewPy() 
     " call setline(1,"#!/usr/bin/env python"   
     call setline(1,"# -*- encoding: utf-8 -*-")
@@ -151,4 +154,4 @@ function! ClosePair(char)
         return a:char
     endif
 endfunction
-
+set pastetoggle=<F9>
